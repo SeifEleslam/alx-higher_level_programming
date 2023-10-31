@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import this
-str = this.__doc__
-if str:
-  print(str[136:])
-  print(str[:136])
+s = this.__doc__
+if s:
+    print(s[136:])
+    print(s[:136])
