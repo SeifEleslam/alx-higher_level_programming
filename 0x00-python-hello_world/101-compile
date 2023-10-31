@@ -1,8 +1,2 @@
-#!/usr/bin/python3
-import py_compile
-import os
-input_file = os.getenv('PYFILE')
-output_file = input_file + 'c'
-with open(input_file, 'r') as f:
-    source = f.read()
-py_compile.compile(source, output_file)
+#!/bin/bash
+python3 $PYFILE >> "$PYFILEc"
