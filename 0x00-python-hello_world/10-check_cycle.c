@@ -11,7 +11,7 @@ int check_cycle(listint_t *list)
 	listint_t *suspect;
 
 	
-	for (i = 0, list = list; list && list->next; list = list->next, i++)
+	for (i = 0; list && list->next; list = list->next, i++)
 		for (l = 0, suspect = list; l < i; suspect = suspect->next, l++)
 			if (suspect == list)
 				return (1);
