@@ -2,5 +2,5 @@
 import this
 
 str = this.__doc__
-print(str[136:])
+print("The Zen of Python, by Tim Peters\n")
 print(str[:136])
