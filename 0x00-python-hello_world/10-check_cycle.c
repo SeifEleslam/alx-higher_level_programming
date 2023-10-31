@@ -1,8 +1,8 @@
 #include "lists.h"
 /**
  * check_cycle - prints all elements of a listint_t list
- * @listint_t: pointer to head of list
- * Return: int 
+ * @list: pointer to head of list
+ * Return: int
  */
 
 int check_cycle(listint_t *list)
