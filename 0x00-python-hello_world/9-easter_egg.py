@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import this
 
-str = this.__doc__
-print("The Zen of Python, by Tim Peters\n")
-print(str[:136])
+arr = this.__doc__.split('\n\n')
+print(arr[2])
+print(arr[1])
