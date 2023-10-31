@@ -1,5 +1,5 @@
 #!/usr/bin/python3
 import this
 
-print("The Zen of Python, by Tim Peters\n")
-print(this.__doc__)
+print(this.__doc__[136:-4])
+print(this.__doc__[:136])
