@@ -8,12 +8,12 @@
 int check_cycle(listint_t *list)
 {
 	unsigned int i, l;
-	listint_t *curr, *suspect;
+	listint_t *suspect;
 
 	
-	for (i = 0, curr = list; curr && curr->next; curr = curr->next, i++)
+	for (i = 0, list = list; list && list->next; list = list->next, i++)
 		for (l = 0, suspect = list; l < i; suspect = suspect->next, l++)
-			if (suspect == curr)
+			if (suspect == list)
 				return (1);
 	return (0);
 }
