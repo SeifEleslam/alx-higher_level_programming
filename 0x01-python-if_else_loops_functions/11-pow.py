@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-def add(a, b):
+def pw(a, b):
     return a ** b
