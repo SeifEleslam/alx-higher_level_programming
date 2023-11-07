@@ -47,7 +47,6 @@ int list_len(listint_t *head)
         head = head->next;
     return len;
 }
-<<<<<<< HEAD
 
 /*
  * add_nodeint_start - check if list is plaindrome
@@ -64,5 +63,3 @@ listint_t *add_nodeint_start(listint_t **head, int n)
     *head = new;
     return (new);
 }
-=======
->>>>>>> b370010951ac6adb175420db24c92695ef0e9b5d
