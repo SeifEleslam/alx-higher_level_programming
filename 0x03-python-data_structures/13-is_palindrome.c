@@ -17,7 +17,7 @@ int is_palindrome(listint_t **head)
     len = list_len(*head);
     if (len == 1)
         return (1);
-    vals = malloc((len + 1) * sizeof(int));
+    vals = malloc((len) * sizeof(int));
     for (i = 0; i < len / 2; i++, curr = curr->next)
         vals[i] = curr->n;
     if (len > 2 * (len / 2))
