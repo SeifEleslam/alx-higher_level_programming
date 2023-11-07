@@ -26,11 +26,11 @@ int is_palindrome(listint_t **head)
     {
         if (vals[i] != curr->n)
         {
-            free(vals);
+            // free(vals);
             return (0);
         }
     }
-    free(vals);
+    // free(vals);
     return (1);
 }
 
