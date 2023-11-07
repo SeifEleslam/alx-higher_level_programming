@@ -1,5 +1,4 @@
 #include "lists.h"
-#include <stdio.h>
 
 /*
  * is_palindrome - check if list is plaindrome
