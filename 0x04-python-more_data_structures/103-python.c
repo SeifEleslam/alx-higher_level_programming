@@ -12,9 +12,6 @@ void print_python_bytes(PyObject *p)
     n_bytes = n_bytes > 8 ? 10 : n_bytes + 1;
     bytes = (assert(PyBytes_Check(p)), (((PyBytesObject *)(p))->ob_sval));
     strcpy(s, bytes);
-    // for (i = 0; s[i] != '\0'; i++)
-    //     if (s[i + 1] > 255 || s[i + 1] < 0)
-    //         s[i + 1] = '\0';
     printf("[.] bytes object info\n");
     printf("  size: %lu\n", (assert(PyBytes_Check(p)), ((PyVarObject *)(p))->ob_size));
     printf("  trying string: %s\n", s);
@@ -29,6 +26,7 @@ void print_python_list(PyObject *p)
     int n;
     PyObject *itm;
 
+    printf("[*] Python list info\n");
     printf("[*] Size of the Python List = %lu\n", ((PyVarObject *)(p))->ob_size);
     printf("[*] Allocated = %lu\n", ((PyListObject *)p)->allocated);
     for (n = 0; n < ((PyVarObject *)(p))->ob_size; n++)
