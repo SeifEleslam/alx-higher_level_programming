@@ -12,8 +12,8 @@ void print_python_bytes(PyObject *p)
 
     n_bytes = n_bytes > 8 ? 10 : n_bytes + 1;
     s = (assert(PyBytes_Check(p)), (((PyBytesObject *)(p))->ob_sval));
-    for (i = 0; i < strlen(s); i++)
-        if (s[i] != '\0' && (s[i + 1] > 255 || s[i + 1] < 0))
+    for (i = 0; s[i] != '\0' && i < strlen(s); i++)
+        if (s[i + 1] > 255 || s[i + 1] < 0)
             s[i + 1] = '\0';
     printf("[.] bytes object info\n");
     printf("  size: %lu\n", (assert(PyBytes_Check(p)), ((PyVarObject *)(p))->ob_size));
