@@ -13,7 +13,7 @@ void print_python_bytes(PyObject *p)
     bytes = (assert(PyBytes_Check(p)), (((PyBytesObject *)(p))->ob_sval));
     if (strcmp(p->ob_type->tp_name, "bytes") == 0)
     {
-        printf("  [ERROR] Invalid Bytes Object");
+        printf("  [ERROR] Invalid Bytes Object\n");
         return;
     }
     strcpy(s, bytes);
