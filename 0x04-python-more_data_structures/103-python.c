@@ -6,18 +6,21 @@
 void print_python_bytes(PyObject *p)
 {
     int i, n_bytes;
-    char *s;
+    char s[1024], *bytes;
 
     n_bytes = strlen(((PyBytesObject *)(p))->ob_sval);
-
     n_bytes = n_bytes > 8 ? 10 : n_bytes + 1;
-    s = (assert(PyBytes_Check(p)), (((PyBytesObject *)(p))->ob_sval));
+    bytes = (assert(PyBytes_Check(p)), (((PyBytesObject *)(p))->ob_sval));
+    strcpy(s, bytes);
+    for (i = 0; s[i] != '\0'; i++)
+        if (s[i + 1] > 255 || s[i + 1] < 0)
+            s[i + 1] = '\0';
     printf("[.] bytes object info\n");
     printf("  size: %lu\n", (assert(PyBytes_Check(p)), ((PyVarObject *)(p))->ob_size));
     printf("  trying string: %s\n", s);
     printf("  first %i bytes:", n_bytes);
     for (i = 0; i < n_bytes; i++)
-        printf(" %02x", s + i ? *(s + i) & 0xFF : 0x00);
+        printf(" %02x", bytes + i ? *(bytes + i) & 0xFF : 0x00);
     printf("\n");
 }
 
