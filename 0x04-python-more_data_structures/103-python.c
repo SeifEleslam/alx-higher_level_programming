@@ -13,7 +13,7 @@ void print_python_bytes(PyObject *p)
     n_bytes = n_bytes > 8 ? 10 : n_bytes + 1;
     s = (assert(PyBytes_Check(p)), (((PyBytesObject *)(p))->ob_sval));
     printf("[.] bytes object info\n");
-    printf("  size: %lu\n", (assert(PyBytes_Check(p)), Py_SIZE(p)));
+    printf("  size: %lu\n", (assert(PyBytes_Check(p)), ((PyVarObject *)(p))->ob_size));
     printf("  trying string: %s\n", s);
     printf("  first %i bytes:", n_bytes);
     for (i = 0; i < n_bytes; i++)
