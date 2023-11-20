@@ -5,7 +5,8 @@ def safe_print_list(my_list=[], x=0):
         try:
             print("{:d}".format(my_list[i]), end="")
             printedElements += 1
-        except KeyError:
+        except KeyError or ValueError:
             break
+
     print()
     return printedElements
