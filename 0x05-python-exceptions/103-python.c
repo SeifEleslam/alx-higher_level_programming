@@ -39,7 +39,7 @@ void print_python_float(PyObject *p)
     }
     dbl = (((PyFloatObject *)(p))->ob_fval);
     printf("[.] float object info\n");
-    printf("  value: %s\n", (((PyFloatObject *)(p))->ob_fval));
+    printf("  value: %f\n", (((PyFloatObject *)(p))->ob_fval));
 }
 
 void print_python_list(PyObject *p)
