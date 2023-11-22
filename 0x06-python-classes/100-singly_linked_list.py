@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""Module for Singly Linked List"""
+
+
 class Node:
     """Node of singly linked list"""
 
