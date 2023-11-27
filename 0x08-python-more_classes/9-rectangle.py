@@ -62,7 +62,8 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        return cls(size, size)
+        """Calling Class"""
+        return Rectangle(size, size)
 
     def __str__(self):
         """String represintaion for Rec"""
