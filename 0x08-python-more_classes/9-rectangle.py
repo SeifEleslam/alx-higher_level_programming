@@ -16,6 +16,11 @@ class Rectangle:
             raise TypeError("rect_2 must be an instance of Rectangle")
         return rect_2 if rect_2.area() > rect_1.area() else rect_1
 
+    @classmethod
+    def square(cls, size=0):
+        """Creates new rectangle with given size or default one"""
+        return cls(size, size)
+
     def __init__(self, width=0, height=0):
         """Intialize size of square with raising the proper error"""
         self.height = height
