@@ -11,8 +11,9 @@ class Rectangle:
     @classmethod
     def square(cls, size=0):
         """Creates new rectangle with given size or default 0"""
-        return Rectangle(size, size)
+        return cls(size, size)
 
+    @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """Comparing two Recs and returning the bigger"""
         if not isinstance(rect_1, Rectangle):
