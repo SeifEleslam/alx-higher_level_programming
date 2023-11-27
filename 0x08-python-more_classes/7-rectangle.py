@@ -61,7 +61,7 @@ class Rectangle:
         """String represintaion for Rec"""
         output = ""
         for i in range(self.height):
-            output += "{}\n".format(self.print_symbol * (self.width))
+            output += "{}\n".format(Rectangle.print_symbol * (self.width))
         return "" if (self.width == 0 or self.width == 0
                       )else output[0:-1]
 
