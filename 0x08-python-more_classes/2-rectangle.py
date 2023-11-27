@@ -16,7 +16,8 @@ class Rectangle:
 
     def perimeter(self):
         """Calculate Rec Perimeter"""
-        return (self.height + self.width)*2 if self.height > 0 and self.width > 0 else 0
+        return (self.height + self.width)*2 if (
+            self.height > 0 and self.width > 0) else 0
 
     @property
     def width(self):
@@ -45,18 +46,3 @@ class Rectangle:
         elif value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
-
-    def is_tuple_valid(self, tup):
-        for ele in tup:
-            if (not isinstance(ele, int)) or ele < 0:
-                return False
-        return True
-
-    def my_print(self):
-        """Print the Square with char #"""
-        if self.size == 0:
-            print()
-            return
-        print("\n" * self.position[1], end="")
-        for i in range(self.size):
-            print("{}{}".format(" " * (self.position[0]), "#" * (self.size)))
