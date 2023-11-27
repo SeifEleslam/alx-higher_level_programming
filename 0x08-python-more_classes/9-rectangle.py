@@ -10,7 +10,7 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        """Creates new rectangle with given size or default one"""
+        """Creates new rectangle with given size or default 0"""
         return cls(size, size)
 
     def bigger_or_equal(rect_1, rect_2):
