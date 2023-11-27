@@ -11,8 +11,12 @@ class Rectangle:
         self.width = width
 
     def area(self):
-        """Calculate Square Area"""
-        return self.size ** 2
+        """Calculate Rec Area"""
+        return self.height ** self.width
+
+    def perimeter(self):
+        """Calculate Rec Perimeter"""
+        return (self.height + self.width)*2 if self.height > 0 and self.width > 0 else 0
 
     @property
     def width(self):
@@ -34,7 +38,7 @@ class Rectangle:
         return self.__height
 
     @height.setter
-    def position(self, value):
+    def height(self, value):
         """Set the value of height"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")

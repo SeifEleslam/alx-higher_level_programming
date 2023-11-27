@@ -7,8 +7,8 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """Intialize size of square with raising the proper error"""
-        self.height = height
         self.width = width
+        self.height = height
 
     @property
     def width(self):
@@ -30,7 +30,7 @@ class Rectangle:
         return self.__height
 
     @height.setter
-    def position(self, value):
+    def height(self, value):
         """Set the value of height"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
