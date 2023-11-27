@@ -51,12 +51,6 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__height = value
 
-    def is_tuple_valid(self, tup):
-        for ele in tup:
-            if (not isinstance(ele, int)) or ele < 0:
-                return False
-        return True
-
     def __str__(self):
         """String represintaion for Rec"""
         output = ""
