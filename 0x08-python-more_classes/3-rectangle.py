@@ -54,11 +54,10 @@ class Rectangle:
                 return False
         return True
 
-    def my_print(self):
-        """Print the Square with char #"""
-        if self.size == 0:
-            print()
-            return
-        print("\n" * self.position[1], end="")
-        for i in range(self.size):
-            print("{}{}".format(" " * (self.position[0]), "#" * (self.size)))
+    def __str__(self):
+        """String represintaion for Rec"""
+        output = ""
+        for i in range(self.height):
+            output += "{}\n".format("#" * (self.width))
+        return "" if (self.width == 0 or self.width == 0
+                      )else output[0:-1]
