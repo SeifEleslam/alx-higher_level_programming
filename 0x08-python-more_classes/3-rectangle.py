@@ -13,11 +13,12 @@ class Rectangle:
 
     def area(self):
         """Calculate Rec Area"""
-        return self.height ** self.width
+        return self.height * self.width
 
     def perimeter(self):
         """Calculate Rec Perimeter"""
-        return (self.height + self.width)*2 if self.height > 0 and self.width > 0 else 0
+        return (self.height + self.width)*2 if (
+            self.height > 0 and self.width > 0) else 0
 
     @property
     def width(self):
