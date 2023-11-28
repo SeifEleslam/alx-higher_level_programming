@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 def magic_string(ls=[]):
     ls += [1]
-    return "BestSchool, " * len(ls) + "BestSchool"
+    return "BestSchool, " * len(ls)-1 + "BestSchool"
