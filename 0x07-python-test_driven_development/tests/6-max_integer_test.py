@@ -14,6 +14,6 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer(["1", "2D", "22.2", "23"]), "2D")
         self.assertEqual(max_integer(["1", "2", "22.2", "23"]), "23")
         with self.assertRaises(TypeError):
-            self.assertEqual(max_integer([1, 2, "Sad", 4]), "sad")
-            self.assertEqual(max_integer([1, 2, "Sad", [1, 2, 3]]), "sad")
-            self.assertEqual(max_integer([1, (1, 2), "Sad", 4]), "sad")
+            max_integer([1, 2, "Sad", 4])
+            max_integer([1, 2, "Sad", [1, 2, 3]])
+            max_integer([1, (1, 2), "Sad", 4])
