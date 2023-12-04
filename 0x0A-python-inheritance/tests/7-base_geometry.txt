@@ -41,3 +41,9 @@ Using ``BaseGeometry``
 ...     print("[{}] {}".format(e.__class__.__name__, e))
 ... 
 [TypeError] distance must be an integer
+>>> try:
+...     bg.integer_validator("distance", {})
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+... 
+[TypeError] distance must be an integer
