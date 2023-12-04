@@ -76,7 +76,7 @@ TypeError: width must be an integer
 Traceback (most recent call last):
 ...
 TypeError: width must be an integer
->>> bg.integer_validator("width", frozenset(["hello", "world"]))
+>>> bg.integer_validator("width", {"sad":"sad"})
 Traceback (most recent call last):
 ...
 TypeError: width must be an integer
