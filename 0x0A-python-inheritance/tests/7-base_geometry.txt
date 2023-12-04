@@ -47,3 +47,11 @@ Exception: area() is not implemented
 Traceback (most recent call last):
 ...
 TypeError: width must be an integer
+>>> bg.integer_validator("width", int)
+Traceback (most recent call last):
+...
+TypeError: width must be an integer
+>>> bg.integer_validator("width", True)
+Traceback (most recent call last):
+...
+TypeError: width must be an integer
