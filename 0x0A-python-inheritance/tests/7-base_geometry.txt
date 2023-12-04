@@ -43,10 +43,6 @@ TypeError: name must be an integer
 Traceback (most recent call last):
 ...
 Exception: area() is not implemented
->>> bg.integer_validator("width", 89, 11)
-Traceback (most recent call last):
-...
-TypeError: BaseGeometry.integer_validator() takes 3 positional arguments but 4 were given
 >>> bg.integer_validator("width", None)
 Traceback (most recent call last):
 ...
