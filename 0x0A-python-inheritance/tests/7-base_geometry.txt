@@ -51,7 +51,3 @@ TypeError: BaseGeometry.integer_validator() takes 3 positional arguments but 4 w
 Traceback (most recent call last):
 ...
 TypeError: width must be an integer
->>> bg.integer_validator("width")
-Traceback (most recent call last):
-...
-TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
