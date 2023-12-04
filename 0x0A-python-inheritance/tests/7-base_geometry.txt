@@ -72,7 +72,8 @@ ValueError: width must be greater than 0
 Traceback (most recent call last):
 ...
 TypeError: width must be an integer
->>> bg.integer_validator("width", complex(1,1))
+>>> bg.integer_validator("width", {1,1})
 Traceback (most recent call last):
 ...
 TypeError: width must be an integer
+
