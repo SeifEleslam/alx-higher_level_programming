@@ -1,1 +1,1 @@
-Read Me
+This School is so cool!
