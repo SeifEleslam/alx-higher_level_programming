@@ -20,4 +20,4 @@ class Student():
         return output
 
     def reload_from_json(self, json):
-        self.__dict__ = json
+        self.__dict__ = json.copy()
