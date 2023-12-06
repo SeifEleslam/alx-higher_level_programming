@@ -15,7 +15,7 @@ def print_stats(data):
 def signal_handler(signal_num, frame):
     """Handle signals"""
     print_stats(data)
-    raise KeyboardInterrupt
+    # raise KeyboardInterrupt
 
 
 if __name__ == "__main__":
