@@ -20,7 +20,7 @@ def signal_handler(signal_num, frame):
 
 if __name__ == "__main__":
     count = 0
-    signal.signal(signal.SIGINT, signal_handler)
+    # signal.signal(signal.SIGINT, signal_handler)
 # try:
     for line in sys.stdin:
         count += 1
@@ -32,4 +32,4 @@ if __name__ == "__main__":
         if count % 10 == 0:
             print_stats(data)
 # except KeyboardInterrupt:
-    print_stats(data)
+    # print_stats(data)
