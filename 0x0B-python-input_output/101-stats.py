@@ -1,9 +1,6 @@
 #!/usr/bin/python3
 """Read stdin"""
 import sys
-import signal
-
-data = {"File size": 0, "status": {}}
 
 
 def print_stats(data):
@@ -13,18 +10,9 @@ def print_stats(data):
         print("%s: %d" % (key, data["status"][key]))
 
 
-def signal_handler(signal_num, frame):
-    """Handle signals"""
-    print_stats(data)
-    exit(0)
-    # raise KeyboardInterrupt
-
-
 if __name__ == "__main__":
     count = 0
     data = {"File size": 0, "status": {}}
-
-    # signal.signal(signal.SIGINT, signal_handler)
     try:
         for line in sys.stdin:
             count += 1
