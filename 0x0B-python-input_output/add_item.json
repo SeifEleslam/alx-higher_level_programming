@@ -1,1 +1,6 @@
-["mad", "rad", "mad"]
+{
+  "mad": "sad",
+  "sad": "sad",
+  "had": "mad",
+  "test": "test"
+}
