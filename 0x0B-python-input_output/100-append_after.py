@@ -9,6 +9,5 @@ def append_after(filename="", search_string="", new_string=""):
     for i in range(len(lines)):
         if search_string in lines[i]:
             lines[i] += new_string
-    print(lines)
     with open(filename, 'w', encoding="utf-8") as file:
         file.writelines(lines)
