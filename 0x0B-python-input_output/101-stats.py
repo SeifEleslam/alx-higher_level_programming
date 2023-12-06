@@ -33,4 +33,4 @@ if __name__ == "__main__":
         if count % 10 == 0:
             print_stats(data)
 # except KeyboardInterrupt:
-    print_stats(data)
+    # print_stats(data)
