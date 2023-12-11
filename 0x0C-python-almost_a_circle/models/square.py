@@ -42,7 +42,21 @@ class Square(Rectangle):
         """Return a dictionary representation of the square."""
         newDic = {}
         for key, val in vars(self).items():
-            if "width" not in key and "height" not in key:
+            if "height" not in key:
                 newDic[key.replace("_", "").replace(
-                    "Rectangle", "").replace("Square", "")] = val
+                    "Rectangle", "").replace("Square", "").replace(
+                        "width", "size")] = val
         return newDic
+
+
+s1 = Square(10, 2, 1)
+print(s1)
+s1_dictionary = s1.to_dictionary()
+print(s1_dictionary)
+print(type(s1_dictionary))
+
+s2 = Square(1, 1)
+print(s2)
+s2.update(**s1_dictionary)
+print(s2)
+print(s1 == s2)
