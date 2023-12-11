@@ -10,6 +10,8 @@ class Square(Rectangle):
         """Initialize Square"""
         super().__init__(size, size, x, y, id)
         self.size = size
+        self.x = x
+        self.y = y
 
     def __str__(self):
         """String representation"""
