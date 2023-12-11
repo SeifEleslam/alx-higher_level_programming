@@ -1,9 +1,10 @@
-from models.base import Base
-from models.rectangle import Rectangle
-from models.square import Square
+#!/usr/bin/python3
 
 import unittest
 from unittest.mock import Mock, patch
+from models.base import Base
+from models.rectangle import Rectangle
+from models.square import Square
 
 
 class TestBase(unittest.TestCase):
