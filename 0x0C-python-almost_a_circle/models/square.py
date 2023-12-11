@@ -12,6 +12,7 @@ class Square(Rectangle):
         self.size = size
 
     def __str__(self):
+        """String representation"""
         return "[{}] ({}) {}/{} - {}".format(
             self.__class__.__name__, self.id, self.x, self.y, self.size)
 
@@ -28,6 +29,7 @@ class Square(Rectangle):
         self.__size = value
 
     def update(self, *args, **kwargs):
+        """Update square attributes"""
         if len(args) > 1:
             args = list(args)
             args.insert(1, args[1])

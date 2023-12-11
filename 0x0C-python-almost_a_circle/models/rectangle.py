@@ -4,6 +4,8 @@ from base import Base
 
 
 class Rectangle(Base):
+    """A class to represent a rectangle. Inherits from the 'base' class."""
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initialize size of square with raising the proper error"""
         super().__init__(id)
@@ -13,6 +15,7 @@ class Rectangle(Base):
         self.y = y
 
     def __str__(self):
+        """String representation"""
         return "[{}] ({}) {}/{} - {}/{}".format(
             type(self).__name__, self.id, self.x, self.y,
             self.width, self.height)

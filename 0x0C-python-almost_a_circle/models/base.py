@@ -7,6 +7,7 @@ import random
 
 
 class Base:
+    """A class to represent the base of a game."""
     __nb_objects = 0
 
     def __init__(self, id=None):
@@ -32,6 +33,7 @@ class Base:
 
     @classmethod
     def get_heads(cls):
+        """Return all heads in the class."""
         return ["id", "width", "height", "x", "y"
                 ] if cls.__name__ == "Rectangle" else [
             "id", "size", "x", "y"]
@@ -93,6 +95,7 @@ class Base:
 
     @staticmethod
     def random_color():
+        """Return a random color."""
         red = random.randint(0, 255)
         green = random.randint(0, 255)
         blue = random.randint(0, 255)
