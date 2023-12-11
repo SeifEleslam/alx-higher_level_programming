@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Rectangle Class"""
+"""Rectangle Class Module"""
 from base import Base
 
 
@@ -22,12 +22,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """Get the value of width"""
+        """Get the value of rectangle width"""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """set the value of width"""
+        """set the value of rectangle width"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         elif value <= 0:
@@ -36,12 +36,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """Get the value of height"""
+        """Get the value of rectangle height"""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """set the value of height"""
+        """set the value of rectangle height"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         elif value <= 0:
@@ -50,12 +50,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """Get the value of x"""
+        """Get the value of rectangle x"""
         return self.__x
 
     @x.setter
     def x(self, value):
-        """set the value of x"""
+        """set the value of rectangle x"""
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
         elif value < 0:
@@ -64,12 +64,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """Get the value of y"""
+        """Get the value of rectangle y"""
         return self.__y
 
     @y.setter
     def y(self, value):
-        """set the value of y"""
+        """set the value of rectangle y"""
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
         elif value < 0:
