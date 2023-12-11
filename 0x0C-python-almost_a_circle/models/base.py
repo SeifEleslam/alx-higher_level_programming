@@ -49,9 +49,8 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """Create an object from a dictionary."""
-        shape = cls(1) if cls.__name__ == "Square"else cls(1, 1)
+        shape = cls(1) if cls.__name__ == "Square" else cls(1, 1)
         shape.update(**dictionary)
-        print(shape)
         return shape
 
     @classmethod
