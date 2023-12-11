@@ -14,7 +14,8 @@ class Rectangle(Base):
 
     def __str__(self):
         return "[{}] ({}) {}/{} - {}/{}".format(
-            self.__class__.__name__, self.id, self.x, self.y, self.width, self.height)
+            type(self).__name__, self.id, self.x, self.y,
+            self.width, self.height)
 
     @property
     def width(self):

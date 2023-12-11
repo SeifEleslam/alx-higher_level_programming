@@ -20,7 +20,8 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """Convert a list of dictionaries to a JSON string."""
-        list_dictionaries = [] if list_dictionaries is None else list_dictionaries
+        list_dictionaries = [
+        ] if list_dictionaries is None else list_dictionaries
         return json.dumps(list_dictionaries)
 
     @staticmethod
@@ -31,7 +32,8 @@ class Base:
 
     @classmethod
     def get_heads(cls):
-        return ["id", "width", "height", "x", "y"] if cls.__name__ == "Rectangle" else [
+        return ["id", "width", "height", "x", "y"
+                ] if cls.__name__ == "Rectangle" else [
             "id", "size", "x", "y"]
 
     @classmethod
@@ -56,7 +58,8 @@ class Base:
         """Load the list of objects from a file."""
         try:
             with open(f"{cls.__name__}.json", "r") as file:
-                return list(map(lambda x: cls.create(**x), cls.from_json_string(file.read())))
+                return list(map(lambda x: cls.create(
+                    **x), cls.from_json_string(file.read())))
         except FileNotFoundError:
             return []
 
