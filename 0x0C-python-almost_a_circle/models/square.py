@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Square Class Module"""
 from models.rectangle import Rectangle
-# from models.base import Base
 
 
 class Square(Rectangle):
@@ -15,7 +14,7 @@ class Square(Rectangle):
     def __str__(self):
         """String representation"""
         return "[{}] ({}) {}/{} - {}".format(
-            self.__class__.__name__, self.id, self.x, self.y, self.size)
+            type(self).__name__, self.id, self.x, self.y, self.size)
 
     @property
     def size(self):
@@ -23,11 +22,11 @@ class Square(Rectangle):
         return self.__size
 
     @size.setter
-    def size(self, value):
+    def size(self, size):
         """Setter for size"""
-        self.width = value
-        self.height = value
-        self.__size = value
+        self.width = size
+        self.height = size
+        self.__size = size
 
     def update(self, *args, **kwargs):
         """Update square attributes"""
@@ -50,10 +49,3 @@ class Square(Rectangle):
                 newDic[key.replace("_", "").replace(
                     "Rectangle", "").replace("Square", "")] = val
         return newDic
-
-
-# list_rectangles = [Rectangle(100, 40), Rectangle(
-#     90, 110, 30, 10), Rectangle(20, 25, 110, 80)]
-# list_squares = [Square(35), Square(15, 70, 50), Square(80, 30, 70)]
-
-# Base.draw(list_rectangles, None)
