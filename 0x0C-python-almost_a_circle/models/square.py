@@ -1,6 +1,6 @@
 """Square Class"""
-from rectangle import Rectangle
-from base import Base
+from models.rectangle import Rectangle
+from models.base import Base
 
 
 class Square(Rectangle):
