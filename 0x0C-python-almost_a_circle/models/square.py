@@ -25,7 +25,6 @@ class Square(Rectangle):
         """Setter for size"""
         self.width = size
         self.height = size
-        # self.__size = size
 
     def update(self, *args, **kwargs):
         """Update square attributes"""
@@ -38,7 +37,6 @@ class Square(Rectangle):
             kwargs["height"] = kwargs["size"]
             del kwargs["size"]
         super().update(*args, **kwargs)
-        self.size = super().width
 
     def to_dictionary(self):
         """Return a dictionary representation of the square."""
