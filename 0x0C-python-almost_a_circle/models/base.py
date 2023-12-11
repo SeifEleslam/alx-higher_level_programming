@@ -4,6 +4,7 @@ import json
 import csv
 import turtle
 import random
+from contextlib import closing
 
 
 class Base:
@@ -57,10 +58,10 @@ class Base:
     def load_from_file(cls):
         """Load the list of objects from a file."""
         try:
-            with open(f"{cls.__name__}.json", "r") as file:
+            with closing(open(f"{cls.__name__}.json", "r")) as file:
                 return list(map(lambda x: cls.create(
                     **x), cls.from_json_string(file.read())))
-        except FileNotFoundError:
+        except (FileNotFoundError):
             return []
 
     @classmethod
@@ -81,14 +82,14 @@ class Base:
         output = []
         heads = cls.get_heads()
         try:
-            with open(f"{cls.__name__}.csv", "r") as file:
+            with closing(open(f"{cls.__name__}.csv", "r")) as file:
                 reader = csv.DictReader(file)
                 for row in reader:
                     for key in row:
                         row[key] = int(row[key])
                     output.append(cls.create(**row))
                 return output
-        except FileNotFoundError:
+        except (FileNotFoundError):
             return output
 
     @staticmethod
