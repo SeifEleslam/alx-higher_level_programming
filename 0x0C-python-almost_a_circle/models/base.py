@@ -19,7 +19,7 @@ class Base:
         self.id = self.__class__.__nb_objects
 
     @staticmethod
-    def to_json_string(list_dictionaries=None):
+    def to_json_string(list_dictionaries):
         """Convert a list of dictionaries to a JSON string."""
         return "[]" if type(list_dictionaries) != list else (
             json.dumps(list_dictionaries))
