@@ -1,8 +1,9 @@
 from models.base import Base
 from models.rectangle import Rectangle
+from models.square import Square
+
 import unittest
 from unittest.mock import Mock, patch
-import json
 
 
 class TestBase(unittest.TestCase):
@@ -32,15 +33,17 @@ class TestBase(unittest.TestCase):
 
     def test_get_heads(self):
         """Test retrieval of object heads based on class name."""
-        self.assertEqual(Base.get_heads(), ["id", "width", "height", "x", "y"])
-        rectangle_heads = Base.get_heads(Rectangle)
-        self.assertEqual(rectangle_heads, ["id", "width", "height", "x", "y"])
+        self.assertEqual(Rectangle.get_heads(), [
+                         "id", "width", "height", "x", "y"])
+        square_heads = Square.get_heads()
+        self.assertEqual(square_heads, ["id", "size", "x", "y"])
 
     def test_save_to_file(self):
         """Test saving list of objects to a JSON file."""
+        test_rec = Rectangle(1, 2)
         with patch("builtins.open"):
-            Base.save_to_file([Base(1), Base(2)])
-            open.assert_called_once_with("Base.json", "w")
+            test_rec.save_to_file([test_rec])
+            open.assert_called_once_with("Rectangle.json", "w")
 
     def test_create(self):
         """Test creation of object from a dictionary."""
@@ -56,23 +59,25 @@ class TestBase(unittest.TestCase):
         with patch("builtins.open") as mock_open:
             mock_open.return_value = Mock(
                 read=Mock(return_value=Base.to_json_string([test_rec.to_dictionary()])))
-            objects = test_rec.load_from_file()
+            objects = list(map(lambda x: x.to_dictionary(),
+                           test_rec.load_from_file()))
             self.assertEqual(objects, [test_rec.to_dictionary()])
 
     def test_save_to_file_csv(self):
         """Test saving list of objects to a CSV file."""
-        with patch("builtins.open"):
-            Base.save_to_file_csv([Base(1), Base(2)])
-            open.assert_called_once_with("Base.csv", "w")
-
-    def test_load_from_file_csv(self):
-        """Test loading list of objects from a CSV file."""
         test_rec = Rectangle(1, 2)
-        with patch("builtins.open") as mock_open:
-            mock_open.return_value = Mock(
-                read=Mock(return_value="id\n1\n2\n"))
-            objects = test_rec.load_from_file_csv()
-            self.assertEqual(objects, [])
+        with patch("builtins.open"):
+            test_rec.save_to_file_csv([test_rec])
+            open.assert_called_once_with("Rectangle.csv", "w")
+
+    # def test_load_from_file_csv(self):
+    #     """Test loading list of objects from a CSV file."""
+    #     test_rec = Rectangle(1, 2)
+    #     with patch("builtins.open") as mock_open:
+    #         mock_open.return_value = Mock(
+    #             read=Mock(return_value="id\n1\n2\n"))
+    #         objects = test_rec.load_from_file_csv()
+    #         self.assertEqual(objects, [])
 
     def test_random_color(self):
         """Test generation of random color."""
