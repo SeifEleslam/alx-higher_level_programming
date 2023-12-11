@@ -27,8 +27,8 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """to json"""
-        json_list = json.loads(json_string)
-        return [] if json_list is None else json_list
+        return [] if type(json_string) != str else (
+            json.loads(json_string))
 
     @classmethod
     def get_heads(cls):
