@@ -91,11 +91,11 @@ class Rectangle(Base):
                 setattr(self, key, kwargs[key])
 
     def area(self):
-        """Calculate Square Area"""
+        """Calculate rectangle Area"""
         return self.width * self.height
 
     def display(self):
-        """Display Rectangle"""
+        """Display Rectangle using # char"""
         for i in range(self.y):
             print()
         for i in range(self.height):
