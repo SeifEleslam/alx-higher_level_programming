@@ -1,4 +1,4 @@
-"""Square Class"""
+"""Square Class Module"""
 from models.rectangle import Rectangle
 # from models.base import Base
 
