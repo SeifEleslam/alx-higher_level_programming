@@ -1,0 +1,2 @@
+-- Delete DATABASE
+SHOW TABLES FROM $1 
