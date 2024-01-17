@@ -1,5 +1,5 @@
 -- score too low
 SELECT score, name
-WHERE name NOT NULL
 FROM second_table
+WHERE name IS NOT NULL
 ORDER BY score DESC;
