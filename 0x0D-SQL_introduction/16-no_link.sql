@@ -1,6 +1,5 @@
 -- score too low
-SELECT score, COUNT(score)
-AS number
+SELECT score, name
+WHERE name NOT NULL
 FROM second_table
-GROUP BY score
-ORDER BY COUNT(score) DESC;
+ORDER BY score DESC;
