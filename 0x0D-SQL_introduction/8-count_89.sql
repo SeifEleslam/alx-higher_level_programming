@@ -1,4 +1,4 @@
 -- add
 SELECT COUNT id
 FROM first_table
-WHERE id =89;
+WHERE id = 89;
