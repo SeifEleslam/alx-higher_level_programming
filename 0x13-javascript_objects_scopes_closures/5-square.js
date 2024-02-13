@@ -1,6 +1,7 @@
 #!/usr/bin/node
 
-const Rectangle = require("./4-rectangle");
+// prettier-ignore
+const Rectangle = require('./4-rectangle');
 
 // prettier-ignore
 class Square extends Rectangle {
