@@ -1,13 +1,12 @@
 #!/usr/bin/node
 
 // prettier-ignore
-const Rectangle = require('./4-rectangle');
+const ParentSquare = require('./5-square');
 
 // prettier-ignore
-class Square extends Rectangle {
+class Square extends ParentSquare {
   constructor (size) {
-    super(size, size);
-    this.size = size
+    super(size);
   }
 
   charPrint (c = 'X') {
