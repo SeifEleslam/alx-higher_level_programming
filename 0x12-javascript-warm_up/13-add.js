@@ -1,5 +1,6 @@
 #!/usr/bin/node
 // prettier-ignore
-exports.add = (a, b) => {
+function add (a, b) {
   return +a + +b;
 }
+exports.add = add;
