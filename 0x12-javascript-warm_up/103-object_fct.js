@@ -4,9 +4,12 @@ const myObject = {
   value: 12,
 };
 console.log(myObject);
-myObject.incr = function () {
+
+// prettier-ignore
+function addOne() {
   this.value++;
-};
+}
+myObject.incr = addOne;
 myObject.incr();
 console.log(myObject);
 myObject.incr();
