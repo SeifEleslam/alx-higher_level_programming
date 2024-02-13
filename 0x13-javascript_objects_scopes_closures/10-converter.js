@@ -1,5 +1,4 @@
 #!/usr/bin/node
-
 // prettier-ignore
 exports.converter = function (base) {
   return function (num) {
