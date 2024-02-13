@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 
-const Square = require("./6-square");
+const esrever = require("./8-esrever").esrever;
 
-const s1 = new Square(4);
-s1.charPrint();
-
-s1.charPrint("C");
+console.log(esrever([1, 2, 3, 4, 5]));
+console.log(esrever(["School", 89, { id: 12 }, "String"]));
