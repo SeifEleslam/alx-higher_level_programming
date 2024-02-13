@@ -1,14 +1,12 @@
-#!/usr/bin/node
+#!/usr/bin/env node
 const myObject = {
   type: 'object',
   value: 12,
 };
 console.log(myObject);
-
-// prettier-ignore
-function addOne() {
+const addOne = function () {
   this.value++;
-}
+}.bind(myObject);
 myObject.incr = addOne;
 myObject.incr();
 console.log(myObject);
