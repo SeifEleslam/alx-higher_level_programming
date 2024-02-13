@@ -24,4 +24,5 @@ class Rectangle {
   }
 }
 
-module.exports = Rectangle;
+// prettier-ignore
+module.exports = Rectangle
