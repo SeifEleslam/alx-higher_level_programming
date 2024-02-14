@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 // prettier-ignore
 const fs = require('fs').promises;
 
