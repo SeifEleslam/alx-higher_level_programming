@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """Start link class to table in database"""
 import sys
-from model_state import Base, State
+from model_state import Base
 from sqlalchemy.orm import Session
-
+from model_city import City
 from sqlalchemy import (create_engine)
 
 if __name__ == "__main__":
@@ -11,9 +11,9 @@ if __name__ == "__main__":
         sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
     Base.metadata.create_all(engine)
     session = Session(engine)
-    selected_states = session.query(State)\
-        .filter(State.name.contains('a'))
-    for state in selected_states:
-        session.delete(state)
-    session.commit()
+    selected_cities = session.query(City)\
+        .all()
+    for city in selected_cities:
+        print("{}: ({}) {}".format(
+            city.state.name, city.id, city.name))
     session.close()
