@@ -13,8 +13,7 @@ if __name__ == "__main__":
     session = Session(engine)
     selected_states = session.query(State)\
         .filter(State.name.contains('a'))
-    if len(list(selected_states)) > 0:
-        for state in selected_states:
-            session.delete(state)
-        session.commit()
+    for state in selected_states:
+        session.delete(state)
+    session.commit()
     session.close()
