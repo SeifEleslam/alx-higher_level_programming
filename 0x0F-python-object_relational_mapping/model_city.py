@@ -14,4 +14,6 @@ class City(Base):
     name = Column(String)
     state_id = Column(Integer, ForeignKey(
         "states.id", ondelete="CASCADE"))
+
+    # Relationship to State class
     state = relationship("State", backref="cities")
