@@ -12,4 +12,4 @@ class State(Base):
     __tablename__ = 'states'
     id = Column(Integer, primary_key=True, nullable=False)
     name = Column(String(256), nullable=False)
-    cities = relationship("City", back_populates="state")
+    cities = relationship("City", backref="state")
