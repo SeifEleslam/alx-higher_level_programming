@@ -2,7 +2,7 @@
 """Requesting Status wit urllib"""
 import requests
 from sys import argv as args
-
+# http://0.0.0.0:5000/search_user
 if __name__ == "__main__":
     """Don't Run on Import"""
     query = args[1] if len(args) > 1 else ''
@@ -10,7 +10,8 @@ if __name__ == "__main__":
                         params={"q": query})
     try:
         data: dict = res.json()
-        if data.get():
+        print(data)
+        if data:
             print(f'[{data.get("id")}] {data.get("name")}')
         else:
             print("No result")
