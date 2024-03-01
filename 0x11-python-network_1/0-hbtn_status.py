@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Requesting Status wit urllib"""
 from urllib.request import Request, urlopen
+
 if __name__ == "__main__":
     """Don't Run on Import"""
     with urlopen(Request(
