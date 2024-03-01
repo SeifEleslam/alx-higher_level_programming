@@ -5,15 +5,14 @@ from sys import argv as args
 
 if __name__ == "__main__":
     """Don't Run on Import"""
-    query = args[1] if len(args) > 2 else ''
+    query = args[1] if len(args) > 1 else ''
     res = requests.post('http://0.0.0.0:5000/search_user',
                         params={"q": query})
     try:
-        data = res.json()
-        if data:
-            print(f'[{data['id']}] {data['name']}')
+        data: dict = res.json()
+        if data.get():
+            print(f'[{data.get("id")}] {data.get("name")}')
         else:
             print("No result")
     except Exception:
         print("Not a valid JSON")
-    
