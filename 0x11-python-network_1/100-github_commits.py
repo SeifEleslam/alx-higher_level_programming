@@ -5,7 +5,7 @@ from sys import argv as args
 
 if __name__ == "__main__":
     """Don't Run on Import"""
-    url = f"https://api.github.com/repos/{args[1]}/{args[2]}/commits"
+    url = f"https://api.github.com/repos/{args[2]}/{args[1]}/commits"
     headers = {"Accept": "application/vnd.github+json",
                "X-GitHub-Api-Version": "2022-11-28"}
     res = requests.get(url, headers=headers)
