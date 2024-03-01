@@ -10,8 +10,9 @@ def find_peak(list_of_integers):
     if list_len == 1:
         return list_of_integers[0]
     if list_len == 2:
-        return max(list_of_integers[0],
-                   list_of_integers[1])
+        return list_of_integers[0] if\
+            list_of_integers[0] > list_of_integers[1]\
+            else list_of_integers[1]
     target = int(list_len/2)
     if list_of_integers[target] > list_of_integers[target+1] and\
             list_of_integers[target] > list_of_integers[target-1]:
