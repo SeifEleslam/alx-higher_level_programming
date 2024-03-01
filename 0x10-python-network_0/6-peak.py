@@ -18,7 +18,8 @@ def find_peak(list_of_integers):
         return list_of_integers[target]
     if list_of_integers[target] < list_of_integers[target-1]:
         r_list = list_of_integers[:target]
-    r_list = list_of_integers[target+1:]
+    else:
+        r_list = list_of_integers[target+1:]
     # Check if there is only one
     # for i in range(list_len):
     #     peak = list_of_integers[i]
