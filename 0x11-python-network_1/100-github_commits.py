@@ -10,6 +10,8 @@ if __name__ == "__main__":
                "X-GitHub-Api-Version": "2022-11-28"}
     res = requests.get(url, headers=headers)
     commits = res.json()
-    for commit in commits:
+    for i, commit in enumerate(commits):
+        if i == 10:
+            break
         author = commit.get('commit').get('author').get('name')
         print(f"{commit.get('sha')}: {author}")
