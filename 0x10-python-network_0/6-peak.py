@@ -10,21 +10,12 @@ def find_peak(list_of_integers):
     if list_len == 1:
         return list_of_integers[0]
     if list_len == 2:
-        return list_of_integers[0] if\
-            list_of_integers[0] > list_of_integers[1]\
-            else list_of_integers[1]
+        return find_peak([max(list_of_integers[0],
+                              list_of_integers[1])])
     target = int(list_len/2)
     if list_of_integers[target] > list_of_integers[target+1] and\
             list_of_integers[target] > list_of_integers[target-1]:
         return list_of_integers[target]
     if list_of_integers[target] < list_of_integers[target-1]:
-        r_list = list_of_integers[:target]
-    else:
-        r_list = list_of_integers[target+1:]
-    # Check if there is only one
-    # for i in range(list_len):
-    #     peak = list_of_integers[i]
-    #     if i+1 < list_len and\
-    #             list_of_integers[i] > list_of_integers[i+1]:
-    #         break
-    return find_peak(r_list)
+        return find_peak(list_of_integers[:target])
+    return find_peak(list_of_integers[target+1:])
