@@ -10,7 +10,6 @@ if __name__ == "__main__":
                         params={"q": query})
     try:
         data: dict = res.json()
-        print(data)
         if data:
             print(f'[{data.get("id")}] {data.get("name")}')
         else:
