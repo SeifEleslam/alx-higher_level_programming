@@ -8,5 +8,6 @@
     "stdlib.h": "c",
     "object.h": "c",
     "cstdlib": "cpp"
-  }
+  },
+  "prettier.singleQuote": true
 }
