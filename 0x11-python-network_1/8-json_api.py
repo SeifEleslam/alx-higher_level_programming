@@ -5,8 +5,9 @@ from sys import argv as args
 
 if __name__ == "__main__":
     """Don't Run on Import"""
-    query = args[2] if len(args) > 2 else ''
-    res = requests.post(args[1], params={"q": query})
+    query = args[1] if len(args) > 2 else ''
+    res = requests.post('http://0.0.0.0:5000/search_user',
+                        params={"q": query})
     try:
         data = res.json()
         if data:
