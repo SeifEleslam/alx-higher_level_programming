@@ -8,9 +8,10 @@ if __name__ == "__main__":
     query = args[1] if len(args) > 1 else ''
     res = requests.post('http://0.0.0.0:5000/search_user',
                         params={"q": query})
+    print(res.content.decode())
     try:
         data: dict = res.json()
-        if data:
+        if data and len(data) > 0:
             print(f'[{data.get("id")}] {data.get("name")}')
         else:
             print("No result")
